@@ -1,5 +1,5 @@
-CREATE DATABASE PTELearning;
-use PTELearning;
+CREATE DATABASE MusicAppDB;
+use MusicAppDB;
 
 CREATE TABLE skill(
     id INT NOT NULL AUTO_INCREMENT,

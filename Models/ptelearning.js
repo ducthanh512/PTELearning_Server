@@ -6,9 +6,9 @@ var connection = require('./../connection');
 function ptelearning() {
   
   this.getQuestionByCode = function (code, res) {
-    var getByIdStr = createQuery.createGetByForeignId('question','categoryCode', code);
+    var getByIdStr = createQuery.createGetByForeignId('Question','categoryCode', code);
     connection.acquire(function (err, con) {
-      console.log('nay: ',connection, con);
+      console.log('nay: ',getByIdStr);
       con.query(getByIdStr, [code], function (err, result) {
         con.release();
         res.send(result);
@@ -17,7 +17,7 @@ function ptelearning() {
   };
 
   this.getAnswerByQuestionId = function (id, res) {
-    var getByIdStr = createQuery.createGetByForeignId('answer','questionId', id);
+    var getByIdStr = createQuery.createGetByForeignId('Answer','questionId', id);
     connection.acquire(function (err, con) {
       con.query(getByIdStr, [id], function (err, result) {
         con.release();
