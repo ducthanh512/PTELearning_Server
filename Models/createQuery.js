@@ -69,12 +69,12 @@ function createQuery() {
     /* spercific queries */
 
     this.getCategoriesQuery = () => {
-        var query = 'select c.id, c.name, s.name as skill, c.code, count(q.id) as numberOfQuestion from category as c, skill as s, question as q where c.skillId = s.id and c.code = q.categoryCode group by c.id;';
+        var query = 'select c.id, c.name, s.name as skill, c.code, count(q.id) as numberOfQuestion from category as c, skill as s, Question as q where c.skillId = s.id and c.code = q.categoryCode group by c.id;';
         return query;
     }
 
     this.getCategoriesQuery2 = () => {
-        var query = 'select c.id, c.name, s.name as skill, c.code, count(q.id) as numberOfQuestion from category as c LEFT JOIN skill as s on c.skillId = s.id LEFT JOIN question as q on c.code = q.categoryCode group by c.id;';
+        var query = 'select c.id, c.name, s.name as skill, c.code, count(q.id) as numberOfQuestion from category as c LEFT JOIN skill as s on c.skillId = s.id LEFT JOIN Question as q on c.code = q.categoryCode group by c.id;';
         return query;
     }
 
